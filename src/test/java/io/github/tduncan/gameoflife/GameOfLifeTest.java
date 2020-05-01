@@ -1,7 +1,12 @@
 package io.github.tduncan.gameoflife;
 
+import org.junit.jupiter.api.Test;
+
 class GameOfLifeTest {
-    // all cells are dead, should all remain dead
+    @Test
+    void gridWithAllDeadCellsResultsInAllCellsRemainingDead() {
+    }
+
     // all cells are alive
     // live cell with zero live neighbors should die
     // live cell with one live neighbor, should die
