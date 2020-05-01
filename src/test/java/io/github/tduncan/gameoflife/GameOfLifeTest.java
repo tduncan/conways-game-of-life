@@ -5,6 +5,13 @@ import org.junit.jupiter.api.Test;
 class GameOfLifeTest {
     @Test
     void gridWithAllDeadCellsResultsInAllCellsRemainingDead() {
+        var grid = new int[][] {
+                {0,0,0},
+                {0,0,0},
+                {0,0,0}
+        };
+
+        var game = new GameOfLife();
     }
 
     // all cells are alive
