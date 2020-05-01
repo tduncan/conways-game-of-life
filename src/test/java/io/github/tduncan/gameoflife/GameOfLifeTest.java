@@ -2,6 +2,8 @@ package io.github.tduncan.gameoflife;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 class GameOfLifeTest {
     @Test
     void gridWithAllDeadCellsResultsInAllCellsRemainingDead() {
@@ -13,6 +15,9 @@ class GameOfLifeTest {
 
         var game = new GameOfLife();
         var nextGeneration = game.nextGeneration(grid);
+
+        var allDead = new int[][]{{0,0,0},{0,0,0},{0,0,0}};
+        assertArrayEquals(allDead, nextGeneration);
     }
 
     // all cells are alive
