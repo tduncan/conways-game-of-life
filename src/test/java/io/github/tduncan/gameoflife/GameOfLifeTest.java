@@ -12,6 +12,7 @@ class GameOfLifeTest {
         };
 
         var game = new GameOfLife();
+        var nextGeneration = game.nextGeneration(grid);
     }
 
     // all cells are alive
