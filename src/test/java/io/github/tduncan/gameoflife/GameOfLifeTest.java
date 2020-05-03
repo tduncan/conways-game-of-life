@@ -20,6 +20,8 @@ class GameOfLifeTest {
         assertArrayEquals(allDead, nextGeneration);
     }
 
+    // all cells are dead, but grid is not 3x3
+    // static grid, but some cells are alive
     // all cells are alive
     // live cell with zero live neighbors should die
     // live cell with one live neighbor, should die
