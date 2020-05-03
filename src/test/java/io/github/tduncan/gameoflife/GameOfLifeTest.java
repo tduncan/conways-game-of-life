@@ -36,7 +36,20 @@ class GameOfLifeTest {
         assertArrayEquals(allDead, nextGeneration);
     }
 
-    // static grid, but some cells are alive
+    @Test
+    void gridContainingAliveCellsAndRemainsTheSameInTheNextGeneration() {
+        var grid = new int[][]{
+                {1,1,0},
+                {1,1,0},
+                {0,0,0}
+        };
+
+        var game = new GameOfLife();
+        var nextGeneration = game.nextGeneration(grid);
+
+        assertArrayEquals(grid, nextGeneration);
+    }
+
     // all cells are alive
     // live cell with zero live neighbors should die
     // live cell with one live neighbor, should die
