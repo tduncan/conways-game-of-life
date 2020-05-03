@@ -20,7 +20,22 @@ class GameOfLifeTest {
         assertArrayEquals(allDead, nextGeneration);
     }
 
-    // all cells are dead, but grid is not 3x3
+    @Test
+    void largerGridWithAllDeadCellsResultsInAllCellsRemainingDead() {
+        var grid = new int[][] {
+                {0,0,0,0},
+                {0,0,0,0},
+                {0,0,0,0},
+                {0,0,0,0}
+        };
+
+        var game = new GameOfLife();
+        var nextGeneration = game.nextGeneration(grid);
+
+        var allDead = new int[][]{{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+        assertArrayEquals(allDead, nextGeneration);
+    }
+
     // static grid, but some cells are alive
     // all cells are alive
     // live cell with zero live neighbors should die
