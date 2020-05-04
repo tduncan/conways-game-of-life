@@ -50,6 +50,25 @@ class GameOfLifeTest {
         assertArrayEquals(grid, nextGeneration);
     }
 
+    @Test
+    void gridContainAllLiveCellsWillOnlyHaveCornersRemainingAlive() {
+        var allAlive = new int[][]{
+                {1,1,1},
+                {1,1,1},
+                {1,1,1}
+        };
+
+        var game = new GameOfLife();
+        var nextGeneration = game.nextGeneration(allAlive);
+
+        var onlyCornersAlive = new int[][]{
+                {1,0,1},
+                {0,0,0},
+                {1,0,1}
+        };
+        assertArrayEquals(onlyCornersAlive, nextGeneration);
+    }
+
     // all cells are alive
     // live cell with zero live neighbors should die
     // live cell with one live neighbor, should die
