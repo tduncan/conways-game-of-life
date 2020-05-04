@@ -1,5 +1,6 @@
 package io.github.tduncan.gameoflife;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -51,6 +52,7 @@ class GameOfLifeTest {
     }
 
     @Test
+    @Disabled
     void gridContainAllLiveCellsWillOnlyHaveCornersRemainingAlive() {
         var allAlive = new int[][]{
                 {1,1,1},
