@@ -2,9 +2,11 @@ package io.github.tduncan.gameoflife;
 
 class GameOfLife {
     int[][] nextGeneration(int[][] grid) {
-        int xMiddle = grid.length / 2;
-        int yMiddle = grid[0].length / 2;
-        grid[xMiddle][yMiddle] = 0;
+        for(int x = 0; x < grid.length; x++) {
+            for(int y = 0; y < grid[x].length; y++) {
+                grid[x][y] = 0;
+            }
+        }
         return grid;
     }
 }
