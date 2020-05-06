@@ -70,6 +70,25 @@ class GameOfLifeTest {
         assertArrayEquals(allDead, nextGeneration);
     }
 
+    @Test
+    void anotherGridWithOnlySingleLiveCellShouldDieOutEntirely() {
+        var grid = new int[][] {
+                {0,1,0},
+                {0,0,0},
+                {0,0,0}
+        };
+
+        var game = new GameOfLife();
+        var nextGeneration = game.nextGeneration(grid);
+
+        var allDead = new int[][]{
+                {0,0,0},
+                {0,0,0},
+                {0,0,0}
+        };
+        assertArrayEquals(allDead, nextGeneration);
+    }
+
     // live cell with one live neighbor, should die
     // live cell with two live neighbors, should live
     // live cell with three live neighbors, should live
