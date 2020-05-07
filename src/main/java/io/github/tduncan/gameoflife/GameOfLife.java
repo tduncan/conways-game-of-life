@@ -22,13 +22,6 @@ class GameOfLife {
                 aliveNeighbors += isAlive(grid, nx, y) ? 1 : 0;
             }
             aliveNeighbors += isAlive(grid, nx, y + 1) ? 1 : 0;
-            for (int ny = y - 1; ny < y + 2; ny++) {
-                if (nx != x || ny != y) {
-                    if(isAlive(grid, nx, ny)) {
-//                        aliveNeighbors++;
-                    }
-                }
-            }
         }
         return aliveNeighbors;
     }
