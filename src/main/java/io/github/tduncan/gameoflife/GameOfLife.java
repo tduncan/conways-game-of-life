@@ -17,10 +17,15 @@ class GameOfLife {
         int aliveNeighbors = 0;
         // Pivot around the cell at x,y, keeping track of how many live neighboring cells are found
         for(int nx = x - 1; nx < x + 2; nx++) {
+            aliveNeighbors += isAlive(grid, nx, y - 1) ? 1 : 0;
+            if(nx != x) {
+                aliveNeighbors += isAlive(grid, nx, y) ? 1 : 0;
+            }
+            aliveNeighbors += isAlive(grid, nx, y + 1) ? 1 : 0;
             for (int ny = y - 1; ny < y + 2; ny++) {
                 if (nx != x || ny != y) {
                     if(isAlive(grid, nx, ny)) {
-                        aliveNeighbors++;
+//                        aliveNeighbors++;
                     }
                 }
             }
