@@ -21,7 +21,7 @@ class GameOfLife {
                 for (int ny = y - 1; ny < y + 2; ny++) {
                     if (ny >= 0 && ny < grid[x].length) {
                         if (nx != x || ny != y) {
-                            if(grid[nx][ny] == 1) {
+                            if(isAlive(grid, nx, ny)) {
                                 aliveNeighbors++;
                             }
                         }
@@ -30,6 +30,10 @@ class GameOfLife {
             }
         }
         return aliveNeighbors;
+    }
+
+    private boolean isAlive(int [][] grid, int x, int y) {
+        return grid[x][y] == 1;
     }
 }
 
