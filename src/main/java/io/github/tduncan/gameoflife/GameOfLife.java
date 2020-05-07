@@ -19,10 +19,9 @@ class GameOfLife {
         for(int nx = x - 1; nx < x + 2; nx++) {
             for(int ny = y - 1; ny < y + 2; ny++) {
                 if(nx >= 0 && nx < grid.length && ny >= 0 && ny < grid[x].length) {
-                    if(nx == x && ny == y) {  // Don't count the pivot point
-                        continue;
+                    if (nx != x || ny != y) {
+                        aliveNeighbors += grid[nx][ny];
                     }
-                    aliveNeighbors += grid[nx][ny];
                 }
             }
         }
