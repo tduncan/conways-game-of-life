@@ -15,7 +15,6 @@ class GameOfLife {
 
     private int countAliveNeighbors(int[][] grid, int x, int y) {
         int aliveNeighbors = 0;
-        // Pivot around the cell at x,y, keeping track of how many live neighboring cells are found
 
         aliveNeighbors += isAlive(grid, x - 1, y - 1) ? 1 : 0;
         aliveNeighbors += isAlive(grid, x - 1, y) ? 1 : 0;
@@ -28,13 +27,6 @@ class GameOfLife {
         aliveNeighbors += isAlive(grid, x + 1, y) ? 1 : 0;
         aliveNeighbors += isAlive(grid, x + 1, y + 1) ? 1 : 0;
 
-        for(int nx = x - 1; nx < x + 2; nx++) {
-//            aliveNeighbors += isAlive(grid, nx, y - 1) ? 1 : 0;
-//            if(nx != x) {
-//                aliveNeighbors += isAlive(grid, nx, y) ? 1 : 0;
-//            }
-//            aliveNeighbors += isAlive(grid, nx, y + 1) ? 1 : 0;
-        }
         return aliveNeighbors;
     }
 

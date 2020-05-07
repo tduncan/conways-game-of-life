@@ -108,8 +108,6 @@ class GameOfLifeTest {
         assertArrayEquals(expectedNextGeneration, nextGeneration);
     }
 
-    // live cell with two live neighbors, should live
-
     // live cell with one live neighbor, should die
     // live cell with three live neighbors, should live
     // live cell with four live neighbors, should die
