@@ -33,7 +33,10 @@ class GameOfLife {
     }
 
     private boolean isAlive(int [][] grid, int x, int y) {
-        return grid[x][y] == 1;
+        if(x >= 0 && x < grid.length && y >= 0 && y < grid[x].length) {
+            return grid[x][y] == 1;
+        }
+        return false;
     }
 }
 
