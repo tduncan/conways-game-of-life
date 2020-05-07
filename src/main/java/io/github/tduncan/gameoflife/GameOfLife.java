@@ -19,11 +19,9 @@ class GameOfLife {
         for(int nx = x - 1; nx < x + 2; nx++) {
             if(nx >= 0 && nx < grid.length) {
                 for (int ny = y - 1; ny < y + 2; ny++) {
-                    if (ny >= 0 && ny < grid[x].length) {
-                        if (nx != x || ny != y) {
-                            if(isAlive(grid, nx, ny)) {
-                                aliveNeighbors++;
-                            }
+                    if (nx != x || ny != y) {
+                        if(isAlive(grid, nx, ny)) {
+                            aliveNeighbors++;
                         }
                     }
                 }
