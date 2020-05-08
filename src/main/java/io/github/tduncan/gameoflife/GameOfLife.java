@@ -2,15 +2,18 @@ package io.github.tduncan.gameoflife;
 
 class GameOfLife {
     int[][] nextGeneration(int[][] grid) {
+        int[][] nextGeneration = new int[grid.length][grid[0].length];
         for(int x = 0; x < grid.length; x++) {
             for(int y = 0; y < grid[x].length; y++) {
                 int aliveNeighbors = countAliveNeighbors(grid, x, y);
                 if (aliveNeighbors != 2) {
-                    grid[x][y] = 0;
+                    nextGeneration[x][y] = 0;
+                } else {
+                    nextGeneration[x][y] = grid[x][y];
                 }
             }
         }
-        return grid;
+        return nextGeneration;
     }
 
     private int countAliveNeighbors(int[][] grid, int x, int y) {
