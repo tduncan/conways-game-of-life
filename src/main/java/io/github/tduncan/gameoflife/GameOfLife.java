@@ -5,15 +5,8 @@ class GameOfLife {
         for(int x = 0; x < grid.length; x++) {
             for(int y = 0; y < grid[x].length; y++) {
                 int aliveNeighbors = countAliveNeighbors(grid, x, y);
-
-                if(isAlive(grid, x, y)) {
-                    if (aliveNeighbors != 2) {
-                        grid[x][y] = 0;
-                    }
-                } else {
-                    if (aliveNeighbors == 3) {
-                        grid[x][y] = 1;
-                    }
+                if (aliveNeighbors != 2) {
+                    grid[x][y] = 0;
                 }
             }
         }
