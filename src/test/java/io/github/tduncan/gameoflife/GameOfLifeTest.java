@@ -109,7 +109,6 @@ class GameOfLifeTest {
     }
 
     @Test
-    @Disabled
     void deadCellWithThreeLiveNeighborsShouldBecomeAliveInNextGeneration() {
         var grid = new int[][] {
                 {0,1,0},
