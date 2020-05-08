@@ -92,17 +92,17 @@ class GameOfLifeTest {
     @Test
     void liveCellWithTwoLiveNeighborsShouldContinueLivingInNextGeneration() {
         var grid = new int[][] {
-                {1,1,0},
-                {1,0,0},
-                {0,0,0}
+                {0,0,1},
+                {0,1,0},
+                {1,0,0}
         };
 
         var game = new GameOfLife();
         var nextGeneration = game.nextGeneration(grid);
 
         var expectedNextGeneration = new int[][] {
-                {1,1,0},
-                {1,0,0},
+                {0,0,0},
+                {0,1,0},
                 {0,0,0}
         };
         assertArrayEquals(expectedNextGeneration, nextGeneration);
