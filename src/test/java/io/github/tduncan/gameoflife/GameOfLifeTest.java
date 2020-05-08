@@ -108,11 +108,29 @@ class GameOfLifeTest {
         assertArrayEquals(expectedNextGeneration, nextGeneration);
     }
 
+    @Test
+    void deadCellWithThreeLiveNeighborsShouldBecomeAliveInNextGeneration() {
+        var grid = new int[][] {
+                {0,1,0},
+                {1,0,1},
+                {0,0,0}
+        };
+
+        var game = new GameOfLife();
+        var nextGeneration = game.nextGeneration(grid);
+
+        var expectedNextGeneration = new int[][] {
+                {0,1,0},
+                {0,1,0},
+                {0,0,0}
+        };
+        assertArrayEquals(expectedNextGeneration, nextGeneration);
+    }
+
     // live cell with three live neighbors, should live
     // live cell with four live neighbors, should die
     // dead cell with one live neighbor, should remain dead
     // deal cell with two live neighbors, should remain dead
-    // dead cell with three live neighbors, should be alive
     // dead cell with four live neighbors, should be dead
 
     @Test
