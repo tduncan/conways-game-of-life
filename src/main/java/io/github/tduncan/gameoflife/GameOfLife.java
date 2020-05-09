@@ -11,10 +11,10 @@ class GameOfLife {
                 int aliveNeighbors = countAliveNeighbors(grid, x, y);
 
                 if(isAlive(grid, x, y)) {
-                    if (aliveNeighbors != 2 && aliveNeighbors != 3) {
-                        nextGeneration[x][y] = DEAD;
-                    } else {
+                    if (aliveNeighbors == 2 || aliveNeighbors == 3) {
                         nextGeneration[x][y] = grid[x][y];
+                    } else {
+                        nextGeneration[x][y] = DEAD;
                     }
                 } else {
                     if(aliveNeighbors == 3) {
