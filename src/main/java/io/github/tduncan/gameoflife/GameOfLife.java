@@ -11,7 +11,7 @@ class GameOfLife {
                 int aliveNeighbors = countAliveNeighbors(grid, x, y);
 
                 if(isAlive(grid, x, y)) {
-                    if (aliveNeighbors == 2 || aliveNeighbors == 3) {
+                    if (populationIsStable(aliveNeighbors)) {
                         nextGeneration[x][y] = ALIVE;
                     } else {
                         nextGeneration[x][y] = DEAD;
@@ -48,6 +48,10 @@ class GameOfLife {
             return grid[x][y] == ALIVE;
         }
         return false;
+    }
+
+    private boolean populationIsStable(int aliveNeighbors) {
+        return aliveNeighbors == 2 || aliveNeighbors == 3;
     }
 }
 
