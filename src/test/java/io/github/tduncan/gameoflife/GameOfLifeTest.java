@@ -184,11 +184,7 @@ class GameOfLifeTest {
         assertArrayEquals(expectedNextGeneration, nextGeneration);
     }
 
-    // deal cell with two live neighbors, should remain dead
-    // dead cell with four live neighbors, should be dead
-
     @Test
-    @Disabled
     void gridContainAllLiveCellsWillOnlyHaveCornersRemainingAlive() {
         var allAlive = new int[][]{
                 {1,1,1},
@@ -206,4 +202,7 @@ class GameOfLifeTest {
         };
         assertArrayEquals(onlyCornersAlive, nextGeneration);
     }
+
+    // deal cell with two live neighbors, should remain dead
+    // dead cell with four live neighbors, should be dead
 }
