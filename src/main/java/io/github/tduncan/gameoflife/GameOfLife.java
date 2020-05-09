@@ -12,7 +12,7 @@ class GameOfLife {
 
                 if(isAlive(grid, x, y)) {
                     if (aliveNeighbors == 2 || aliveNeighbors == 3) {
-                        nextGeneration[x][y] = grid[x][y];
+                        nextGeneration[x][y] = ALIVE;
                     } else {
                         nextGeneration[x][y] = DEAD;
                     }
