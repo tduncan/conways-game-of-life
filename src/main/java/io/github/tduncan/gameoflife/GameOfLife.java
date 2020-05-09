@@ -1,6 +1,8 @@
 package io.github.tduncan.gameoflife;
 
 class GameOfLife {
+    private static final int DEAD = 0;
+
     int[][] nextGeneration(int[][] grid) {
         int[][] nextGeneration = new int[grid.length][grid[0].length];
         for(int x = 0; x < grid.length; x++) {
@@ -9,7 +11,7 @@ class GameOfLife {
 
                 if(isAlive(grid, x, y)) {
                     if (aliveNeighbors != 2 && aliveNeighbors != 3) {
-                        nextGeneration[x][y] = 0;
+                        nextGeneration[x][y] = DEAD;
                     } else {
                         nextGeneration[x][y] = grid[x][y];
                     }
@@ -26,16 +28,16 @@ class GameOfLife {
     private int countAliveNeighbors(int[][] grid, int x, int y) {
         int aliveNeighbors = 0;
 
-        aliveNeighbors += isAlive(grid, x - 1, y - 1) ? 1 : 0;
-        aliveNeighbors += isAlive(grid, x - 1, y) ? 1 : 0;
-        aliveNeighbors += isAlive(grid, x - 1, y + 1) ? 1 : 0;
+        aliveNeighbors += isAlive(grid, x - 1, y - 1) ? 1 : DEAD;
+        aliveNeighbors += isAlive(grid, x - 1, y) ? 1 : DEAD;
+        aliveNeighbors += isAlive(grid, x - 1, y + 1) ? 1 : DEAD;
 
-        aliveNeighbors += isAlive(grid, x, y - 1) ? 1 : 0;
-        aliveNeighbors += isAlive(grid, x, y + 1) ? 1 : 0;
+        aliveNeighbors += isAlive(grid, x, y - 1) ? 1 : DEAD;
+        aliveNeighbors += isAlive(grid, x, y + 1) ? 1 : DEAD;
 
-        aliveNeighbors += isAlive(grid, x + 1, y - 1) ? 1 : 0;
-        aliveNeighbors += isAlive(grid, x + 1, y) ? 1 : 0;
-        aliveNeighbors += isAlive(grid, x + 1, y + 1) ? 1 : 0;
+        aliveNeighbors += isAlive(grid, x + 1, y - 1) ? 1 : DEAD;
+        aliveNeighbors += isAlive(grid, x + 1, y) ? 1 : DEAD;
+        aliveNeighbors += isAlive(grid, x + 1, y + 1) ? 1 : DEAD;
 
         return aliveNeighbors;
     }
