@@ -17,7 +17,7 @@ class GameOfLife {
                         nextGeneration[x][y] = DEAD;
                     }
                 } else {
-                    if(aliveNeighbors == 3) {
+                    if(populationIsExpanding(aliveNeighbors)) {
                         nextGeneration[x][y] = ALIVE;
                     }
                 }
@@ -52,6 +52,10 @@ class GameOfLife {
 
     private boolean populationIsStable(int aliveNeighbors) {
         return aliveNeighbors == 2 || aliveNeighbors == 3;
+    }
+
+    private boolean populationIsExpanding(int aliveNeighbors) {
+        return aliveNeighbors == 3;
     }
 }
 
